@@ -10,23 +10,24 @@
   <body>
     <div class="form-container">
       <h1>Register Todo List</h1>
-      <form>
+      <form id="form-register">
         <input
           type="text"
           id="email"
           placeholder="example@email.com"
           required
         />
-        <input type="text" id="password" placeholder="Password" required />
+        <input type="password" id="password" placeholder="Password" required />
         <input
-          type="text"
+          type="password"
           id="confirm-password"
           placeholder="Confirm Pasword"
           required
         />
-        <a href="./login.html">Already have account? Login here!</a>
-        <button type="submit">Register</button>
+        <a href="./index.html">Already have account? Login here!</a>
+        <button type="submit" id="btn-register">Register</button>
       </form>
     </div>
+    <script src="./script/register.js"></script>
   </body>
 </html>
