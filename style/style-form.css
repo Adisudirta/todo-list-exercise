@@ -1,0 +1,64 @@
+@import "./reset.css";
+
+body {
+  background-image: linear-gradient(
+    to right,
+    rgb(72, 143, 224),
+    rgb(172, 25, 185)
+  );
+}
+
+.form-container h1,
+.form-container label,
+.form-container a {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-container h1 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  background-color: white;
+  margin: 20vh auto;
+  width: 350px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+.form-container form {
+  width: 100%;
+  text-align: center;
+}
+
+.form-container form label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.form-container form input {
+  margin: 10px 0;
+  width: 270px;
+}
+
+.form-container a {
+  display: inline-block;
+  font-size: small;
+  margin-bottom: 20px;
+}
+
+.form-container form button {
+  color: white;
+  border: none;
+  width: 50%;
+  padding: 15px;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to right,
+    rgb(72, 143, 224),
+    rgb(172, 25, 185)
+  );
+}
