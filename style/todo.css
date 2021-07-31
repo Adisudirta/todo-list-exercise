@@ -1,0 +1,140 @@
+@import "./reset.css";
+@import "./dialog.css";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* header style */
+header {
+  text-align: center;
+  color: white;
+  height: 20vh;
+  background-image: linear-gradient(
+    to right,
+    rgb(72, 143, 224),
+    rgb(172, 25, 185)
+  );
+  padding: 20px;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+/* ------------- */
+
+/* form style */
+.container-form {
+  background-color: rgb(224, 217, 217);
+  width: 55%;
+  padding: 20px;
+  border-radius: 30px;
+  position: absolute;
+  top: 15vh;
+  left: 21vw;
+}
+
+#todo-form {
+  text-align: center;
+}
+
+#todo-form div {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+div label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#todo-form button {
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  background-image: linear-gradient(
+    to right,
+    rgb(72, 143, 224),
+    rgb(172, 25, 185)
+  );
+}
+/* ------------- */
+
+/* style todos */
+.container-todo {
+  margin-top: 35vh;
+  margin: 35vh auto 0;
+  width: 50%;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(119, 111, 111);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.todo h3 {
+  font-size: 20px;
+}
+
+.todo button {
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.todo #btn-detail {
+  background-color: rgb(36, 167, 36);
+}
+
+.todo #btn-clear {
+  background-color: rgb(238, 58, 58);
+}
+/* ------------- */
+
+/* mobile style */
+@media screen and (max-width: 1000px) {
+  .container-form {
+    width: 84%;
+    left: 3vw;
+  }
+
+  .container-todo {
+    width: 84%;
+    margin: 32vh auto 0;
+  }
+
+  .todo h3,
+  .todo button {
+    font-size: 15px;
+  }
+
+  .todo button {
+    padding: 5px;
+  }
+}
+/* ------------- */

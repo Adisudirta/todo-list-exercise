@@ -5,8 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
+    <link rel="stylesheet" href="./style/todo.css" />
   </head>
   <body>
-    <!-- This is the Todo list page -->
+    <!-- costom dialog box -->
+    <div class="container-shadow">
+      <div class="container-dialog-box">
+        <div class="dialog">
+          <!-- dialog here -->
+        </div>
+        <div class="container-btn-close">
+          <button class="close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+    <!-- ----------------- -->
+    <header>
+      <div class="container-logo">
+        <h1>My Todo-List</h1>
+        <a href="">Logout? Click here!</a>
+      </div>
+    </header>
+    <div class="container-form">
+      <form id="todo-form">
+        <div class="container-title">
+          <label for="title">Title:</label>
+          <input type="text" id="title" placeholder="Your Todo" />
+        </div>
+        <div class="container-description">
+          <label for="description">Description:</label>
+          <input
+            type="text"
+            id="description"
+            placeholder="Your Todo description"
+          />
+        </div>
+        <button type="submit">Add Todo</button>
+      </form>
+    </div>
+    <div class="container-todo">
+      <div class="todo">
+        <div class="todo-title">
+          <h3>Todo Title</h3>
+        </div>
+        <div class="todo-btn">
+          <button id="btn-detail">Detail</button>
+          <button id="btn-clear">Clear</button>
+        </div>
+      </div>
+    </div>
+    <script src="./script/dialog.js"></script>
+    <script src="./script/todo.js"></script>
   </body>
 </html>
