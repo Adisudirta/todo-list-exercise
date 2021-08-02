@@ -7,8 +7,10 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// function untuk menjalankan dialog box
 function dialog(inner) {
+  const containerShadow = document.querySelector(".container-shadow");
   const container = document.querySelector(".dialog");
-  container.setAttribute("style", "display:block");
+  containerShadow.setAttribute("style", "display:block");
   container.innerHTML = inner;
 }

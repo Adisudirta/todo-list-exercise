@@ -1,7 +1,9 @@
+// jika memiliki token maka dianggap sudah login (auto login)
 if (localStorage.getItem("myToken")) {
   location.href = "../todo.html";
 }
 
+// ketika form login disubmit
 document.getElementById("login-form").addEventListener("submit", function (e) {
   e.preventDefault();
   const inputValue = [...document.querySelectorAll("#login-form input")].map(
@@ -10,6 +12,7 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
   login(inputValue);
 });
 
+// function untuk menangkap error dari fetch dan menyimpan token pada localstorage
 async function login([email, pass]) {
   try {
     const token = await postDataLogin(email, pass);
@@ -20,6 +23,7 @@ async function login([email, pass]) {
   }
 }
 
+// function untuk mengirimkan data yang diinputkan di form menuju ke database
 function postDataLogin(email, pass) {
   return fetch("https://shrouded-refuge-36665.herokuapp.com/api/users/login", {
     method: "POST",

@@ -11,14 +11,38 @@
   z-index: 3;
   margin: 20vh auto;
   max-width: 40vw;
-  height: 50vh;
   background-color: white;
   border-radius: 20px;
   border: 3px solid rgb(98, 5, 165);
 }
 
 .dialog {
-  height: 80%;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.dialog h1,
+.dialog h2 {
+  font-weight: bold;
+}
+
+.dialog h2,
+.dialog p {
+  font-size: 16px;
+}
+
+.dialog h2 {
+  margin-bottom: 10px;
+}
+
+.dialog p {
+  margin-bottom: 18px;
+}
+
+.dialog h1 {
+  margin-bottom: 25px;
+  font-size: 28px;
 }
 
 .container-btn-close {

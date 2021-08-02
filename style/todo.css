@@ -28,12 +28,12 @@ header h1 {
   margin-bottom: 10px;
 }
 
-header a {
+header p {
   text-decoration: none;
   color: white;
 }
 
-header a:hover {
+header p:hover {
   text-decoration: underline;
 }
 /* ------------- */
@@ -86,6 +86,12 @@ div label {
   width: 50%;
 }
 
+.container-todo h1 {
+  color: white;
+  text-align: center;
+  padding-top: 40px;
+}
+
 .todo {
   display: flex;
   justify-content: space-between;
@@ -107,11 +113,11 @@ div label {
   padding: 10px;
 }
 
-.todo #btn-detail {
+.todo .btn-detail {
   background-color: rgb(36, 167, 36);
 }
 
-.todo #btn-clear {
+.todo .btn-clear {
   background-color: rgb(238, 58, 58);
 }
 /* ------------- */
