@@ -19,12 +19,13 @@ async function login([email, pass]) {
     localStorage.setItem("myToken", token);
     location.href = "./todo.html";
   } catch (err) {
-    alert(err);
+    errorModal("Something wrong!", err);
   }
 }
 
 // function untuk mengirimkan data yang diinputkan di form menuju ke database
 function postDataLogin(email, pass) {
+  showLoading();
   return fetch("https://shrouded-refuge-36665.herokuapp.com/api/users/login", {
     method: "POST",
     headers: {
@@ -39,6 +40,7 @@ function postDataLogin(email, pass) {
     .then((res) => res.json())
     .then((res) => {
       if (res.message) {
+        Swal.close();
         throw new Error(res.message);
       } else {
         return res.token;

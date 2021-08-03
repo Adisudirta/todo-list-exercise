@@ -51,19 +51,19 @@ document.addEventListener("click", function (e) {
 //function untuk menangkap error pada fetch ketika melakukan oprasi delete
 async function removeTodo(id) {
   const messege = await deleteData(id);
-  console.log(messege);
   myTodo = await getTodo();
   if (myTodo.length !== 0) {
-    console.log(myTodo);
     showTodo();
   } else {
     const containerTodo = document.querySelector(".container-todo");
     containerTodo.innerHTML = `<h1>Empty Activity<h1>`;
   }
+  successModal("Delete Success!", messege);
 }
 
 //function untuk delete data todo pada database
 function deleteData(id) {
+  showLoading();
   return fetch(`https://shrouded-refuge-36665.herokuapp.com/api/todos/${id}`, {
     method: "DELETE",
     headers: {
@@ -73,7 +73,10 @@ function deleteData(id) {
     },
   })
     .then((res) => res.json())
-    .then((res) => res);
+    .then((res) => {
+      Swal.close();
+      return res.message;
+    });
 }
 
 // function untuk mencari tau index suatu elemen berdasarkan property id
@@ -94,7 +97,7 @@ async function setAndGetTodo([title, description]) {
     myTodo = await getTodo();
     showTodo();
   } catch (err) {
-    alert(err);
+    errorModal("Something wrong!", err);
   }
 }
 
@@ -119,6 +122,7 @@ function showTodo() {
 
 // function yang berfungsi untuk mengirim data yang diinputkan dari form
 function postTodo(title, description) {
+  showLoading();
   return fetch("https://shrouded-refuge-36665.herokuapp.com/api/todos", {
     method: "POST",
     headers: {
@@ -132,11 +136,15 @@ function postTodo(title, description) {
     }),
   })
     .then((res) => res.json())
-    .then((res) => res);
+    .then((res) => {
+      Swal.close();
+      return res;
+    });
 }
 
 // function yang berfungsi untuk mendapatkan data todo dari database
 function getTodo() {
+  showLoading();
   return fetch("https://shrouded-refuge-36665.herokuapp.com/api/todos", {
     method: "GET",
     headers: {
@@ -146,5 +154,8 @@ function getTodo() {
     },
   })
     .then((res) => res.json())
-    .then((res) => res);
+    .then((res) => {
+      Swal.close();
+      return res;
+    });
 }

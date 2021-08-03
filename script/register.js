@@ -12,19 +12,23 @@ document
 // function yang berfungsi dalam pengecekan password dan menangkap error pada fetch
 async function register([email, pass, confirmPass]) {
   if (pass !== confirmPass) {
-    alert("Confirm your password correctly!");
+    errorModal("Something wrong!", "Confirm your password correctly!");
   } else {
     try {
       const data = await postDataRegister(email, pass);
-      alert("Thank you for registering, the next step please login");
+      successModal(
+        "Register successfully!",
+        "The next step please login on login page."
+      );
     } catch (err) {
-      alert(err);
+      errorModal("Something wrong!", err);
     }
   }
 }
 
 // function untuk mengirimkan data yang diinputkan dari form register menuju database
 function postDataRegister(email, pass) {
+  showLoading();
   return fetch(
     "https://shrouded-refuge-36665.herokuapp.com/api/users/register",
     {
@@ -42,7 +46,8 @@ function postDataRegister(email, pass) {
     .then((res) => res.json())
     .then((res) => {
       if (res.message) {
-        throw new Error(res.message);
+        Swal.close();
+        throw new Error("Email has been used by another user");
       } else {
         return res;
       }
